@@ -5,16 +5,13 @@ class Solution:
         arr2rptr = n - 1
 
         while True:
-            if arr1mptr < 0:
-                for i in range(arr2rptr+1):
-                    arr1[i] = arr2[i]
-                break
+     
             
-            elif arr2rptr < 0:
+            if arr2rptr < 0:
                 break
 
             else:
-                if arr1[arr1mptr] > arr2[arr2rptr]:
+                if arr1mptr>=0 and arr1[arr1mptr] > arr2[arr2rptr]:
                     arr1[arr1rptr] = arr1[arr1mptr]
                     arr1mptr -= 1
                 else:
