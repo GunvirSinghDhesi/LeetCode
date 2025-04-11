@@ -8,7 +8,6 @@ class Solution:
             if arr1mptr < 0:
                 for i in range(arr2rptr+1):
                     arr1[i] = arr2[i]
-                    print(arr1)
                 break
             
             elif arr2rptr < 0:
@@ -22,4 +21,3 @@ class Solution:
                     arr1[arr1rptr] = arr2[arr2rptr]
                     arr2rptr -= 1
                 arr1rptr -= 1
-            print(arr1)
