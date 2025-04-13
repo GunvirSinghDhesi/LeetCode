@@ -1,9 +1,11 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        k = 2 # stays on last tripple site
+        k = 2
 
         for i in range(2, len(nums)):
-            if nums[k-2] != nums[i]:
+            if nums[i] == nums[k - 2]:
+                pass
+            else:
                 nums[k] = nums[i]
-                k+=1 # only increase to the next site, so we can continue replacing.
+                k += 1
         return k
