@@ -1,10 +1,9 @@
 class Solution:
     def rotate(self, nums: List[int], k: int) -> None:
-        n = len(nums)
-        k%=n
-        arr = [0] * n
+        k%=len(nums)
+        arr = [0] * len(nums)
         for i in range(len(arr)):
-            arr[(k+i)%n] = nums[i]
+            arr[(k+i)%len(nums)] = nums[i]
         nums[:]=arr
 
 
