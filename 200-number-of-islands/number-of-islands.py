@@ -16,16 +16,12 @@ class Solution:
 
             
 
-        m=0
-        while m < len(grid):
-            n=0
-            while n < len(grid[0]):
+        for m in range(len(grid)):
+            for n in range(len(grid[0])):
                 # check if explored -1
                 if grid[m][n] == "1":
                     grid[m][n] = "-1"
                     bfs(m+1,n)
                     bfs(m,n+1)
                     count+=1
-                n+=1
-            m+=1
         return count
