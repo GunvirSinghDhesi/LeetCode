@@ -6,12 +6,12 @@ class Solution:
         def bfs(m,n):
             if m>len(grid)-1 or n>len(grid[0])-1 or m<0 or n<0 or grid[m][n]!="1":
                 return 0
+            # explore all neighbors until a non-neighbor shows up
             grid[m][n] = "-1" 
             bfs(m+1,n)
             bfs(m,n+1)
             bfs(m-1,n)
             bfs(m,n-1)
-            return 1
 
             
 
