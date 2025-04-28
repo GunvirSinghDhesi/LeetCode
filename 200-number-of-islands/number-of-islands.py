@@ -20,8 +20,6 @@ class Solution:
             for n in range(len(grid[0])):
                 # check if explored -1
                 if grid[m][n] == "1":
-                    grid[m][n] = "-1"
-                    bfs(m+1,n)
-                    bfs(m,n+1)
+                    bfs(m,n)
                     count+=1
         return count
