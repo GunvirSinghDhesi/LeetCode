@@ -1,7 +1,6 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         count=0
-        toExplore=[]
         
 
         def bfs(m,n):
