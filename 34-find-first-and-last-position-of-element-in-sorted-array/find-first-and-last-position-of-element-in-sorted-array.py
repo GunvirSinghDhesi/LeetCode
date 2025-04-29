@@ -5,19 +5,37 @@ class Solution:
         left = 0
         right = len(nums)-1
         middle = (left+right)//2
-        print(f"{left} {middle} {right} {nums}")
 
-        while True:
-            if left > right:
-                break
+        fr=-1
+        lr=-1
+        #to find right
+        while left <= right:
             # If middle = target, bring left and right in
             if target==nums[middle]:
-                found=1
-                while nums[right] !=target:
-                    right-=1
-                while nums[left]!=target:
-                    left+=1
-                break
+                fr=middle   
+                found = 1
+                left = middle+1
+                middle = (left+right)//2
+            # Move either left or right in
+            elif(target>nums[middle]):
+                left = middle+1
+                middle =  (left+right)//2
+            elif target<nums[middle]:
+                right = middle-1
+                middle =  (left+right)//2
+
+        left = 0
+        right = len(nums)-1
+        middle = (left+right)//2
+
+        #to find left
+        while left <= right:
+            # If middle = target, bring left and right in
+            if target==nums[middle]:
+                lr=middle   
+                found = 1
+                right = middle-1
+                middle = (left+right)//2
             # Move either left or right in
             elif(target>nums[middle]):
                 left = middle+1
@@ -29,5 +47,5 @@ class Solution:
 
     
         print(ans)
-        ans = [left,right] if found else ans
+        ans = [lr,fr] if found else ans
         return ans
